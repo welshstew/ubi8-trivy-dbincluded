@@ -20,6 +20,7 @@ env:
   REGISTRY: quay.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: swinches/ubi8-trivy-dbincluded
+  REGISTRY_ACCOUNT: swinches+github
 
 
 jobs:
@@ -57,8 +58,8 @@ jobs:
         uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ env.REGISTRY_ACCOUNT }}
+          password: ${{ secrets.QUAY_TOKEN }}
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
