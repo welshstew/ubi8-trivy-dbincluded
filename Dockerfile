@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/ubi-minimal:8.6-902
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.6-941
 
 RUN rpm -ivh https://github.com/aquasecurity/trivy-repo/raw/main/rpm/releases/8/x86_64/trivy-0.31.0.el8.x86_64.rpm
 
